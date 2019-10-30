@@ -17,6 +17,48 @@
   color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+.App-content {
+  display: flex;
+  align-items: space-between;
 }
+
+li.Ingredient-property {
+  list-style-type: none;
+  text-align: start;
+}
+
+li.Ingredient-property::before {
+  content: '🧂';
+  margin-left: 20px;
+  display:inline-block;
+  transition:0.5s;
+}
+
+li.Ingredient-property:hover::before {
+  transform: rotate(360deg);
+}
+
+li.Ingredient-property.selected::before {
+  /* TODO: how to translate to parent width? */
+  transform: translateX(-100%);
+}
+
+/* li.Ingredient-property.selected {
+  display: inline-block;
+	position: relative;
+  transition: all 0.5s cubic-bezier(.55, 0, .1, 1);
+}
+
+li.Ingredient-property.selected::after {
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  top: 50%;
+  margin-top: -0.5px;
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+li.Ingredient-property.selected::after {
+  width: 100%;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+} */
