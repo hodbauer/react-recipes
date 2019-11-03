@@ -15,6 +15,7 @@ class Ingredients extends React.Component {
                         return <li className="Ingredient-property"
                             onClick={e => this.selectIngredient(e.target)}
                             key={`integredient-${integredient}`}>
+                            <span class='line'></span>
                             {integredient}
                         </li>
                     })}
@@ -25,29 +26,3 @@ class Ingredients extends React.Component {
 }
 
 export default Ingredients;
-
-
-// span.line_wrap {
-//     position:relative;
-//     display:inline-block;
-// }
-// span.line {
-// display:inline-block;
-//     position:absolute;
-//     left:0;
-//     top:50%;
-//     width:0;
-//     border-top:1px solid black;
-//     transition: width 0.5s ease-in;
-// }
-// span.line_wrap.active span.line {
-//     width:100%;
-// }
-
-// <script>
-// function test() {
-// 	var line = document.getElementById('a');
-//   line.classList.toggle('active')
-// }
-// </script>
-// <p>This is <span class='line_wrap' id="a" onclick="test()"><span class='line'></span>weird</span></p>

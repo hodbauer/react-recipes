@@ -25,13 +25,14 @@
 li.Ingredient-property {
   list-style-type: none;
   text-align: start;
+  position: relative;
 }
 
 li.Ingredient-property::before {
   content: '🧂';
   margin-left: 20px;
-  display:inline-block;
-  transition:0.5s;
+  display: inline-block;
+  transition: 0.5s;
 }
 
 li.Ingredient-property:hover::before {
@@ -39,26 +40,19 @@ li.Ingredient-property:hover::before {
 }
 
 li.Ingredient-property.selected::before {
-  /* TODO: how to translate to parent width? */
-  transform: translateX(-100%);
+  transform: translateX(-1000%);
 }
 
-/* li.Ingredient-property.selected {
+li.Ingredient-property span.line {
   display: inline-block;
-	position: relative;
-  transition: all 0.5s cubic-bezier(.55, 0, .1, 1);
-}
-
-li.Ingredient-property.selected::after {
   position: absolute;
-  width: 0%;
-  height: 1px;
+  right: 0;
   top: 50%;
-  margin-top: -0.5px;
-  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  width: 0;
+  border-top: 2px solid white;
+  transition: width 0.5s ease-in;
 }
 
-li.Ingredient-property.selected::after {
+li.Ingredient-property.selected span.line {
   width: 100%;
-  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
-} */
+}
