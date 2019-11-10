@@ -1,28 +1,35 @@
 import React from 'react';
+import './Ingredients.css';
 
 class Ingredients extends React.Component {
     selectIngredient = (target) => {
-        console.log(target.classList);
-        target.classList.toggle('selected');
+        target.parentElement.classList.toggle('selected');
     }
 
     render() {
         return (
             <div>
                 <span>מצרכים</span>
-                <ul>
+                <div className="Integredients-container">
                     {this.props.integredients.map(integredient => {
-                        return <li className="Ingredient-property"
+                        return <span className="Ingredient-property"
                             onClick={e => this.selectIngredient(e.target)}
                             key={`integredient-${integredient}`}>
-                            <span class='line'></span>
-                            {integredient}
-                        </li>
+                            <span className="Integredient-bullet" role="img" aria-label="bullet">🧂</span>
+                            <span className="strikethrough">{integredient}</span>
+                        </span>
                     })}
-                </ul>
+                </div>
             </div>
         )
     }
 }
 
 export default Ingredients;
+
+
+// TODO:
+// 1. fix translateX it shouldn't be 1000%
+// 2. start strikethrough from text and not from bullet
+// 3. reverse animation
+// 4. test flex

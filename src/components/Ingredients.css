@@ -1,0 +1,50 @@
+@keyframes slide {
+    0% {
+        transform: rotate(-90deg);
+    }
+
+    50% {
+        transform: translateX(-100%) rotate(-90deg);
+    }
+
+    100% {
+        transform: translateX(-100%) rotate(-180deg);
+    }
+}
+
+.Integredients-container {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    user-select: none;
+}
+
+.Ingredient-property {
+	display: inline-block;
+	position: relative;
+}
+
+.Integredient-bullet {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.Ingredient-property.selected .Integredient-bullet {
+    animation: slide 1s ease;
+    animation-fill-mode: forwards;
+}
+
+.Ingredient-property .strikethrough:before {
+	content: '';
+	position: absolute;
+	display: inline-block;
+	width: 0;
+    height: 2px;
+    top: 50%;
+    background: white;
+	transition: width 0.5s ease;
+}
+
+.Ingredient-property.selected .strikethrough:before {
+    width: 100%;
+}
